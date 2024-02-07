@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+   
+</head>
+<body>
+    <!-- <div id="app">{{message}} {{today}}</div> -->
+    <div id="app">{{message}} {{"Hello" + today}} <br>
+    <p>
+        {{'Random number: ' + Math.ceil(Math.random()*6) }}
+    </p>
+</div>
+    
+
+    
+    <script>
+
+        const app = Vue.createApp({
+          data() {
+            return {
+              message: "Hello World!",
+              today:"Today is wednessday"
+            }
+          }
+        })
+      
+       app.mount('#app')
+      
+      </script>
+</body>
+</html>
