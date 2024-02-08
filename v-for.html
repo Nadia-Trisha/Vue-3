@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <style>
+        .fruitbox{
+            width: 200px;
+        }
+        #app{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app" >
+        <ul>
+            <li v-for="x in fruits">{{x}}</li>
+        </ul>
+
+        <div v-bind:style="{display:'flex', gap:'10px'}">
+        <div class="fruitbox" v-for="y in fruitsphoto">
+            <img v-bind:src="y" alt="" width="200">
+           
+        </div>
+
+    <div>
+        
+        <figure v-for="z in fruitsphotocaption">
+            <img v-bind:src="z.url" alt="" width="200px">
+            <figcaption>{{z.name}}</figcaption>
+             </figure>
+    </div>
+            
+    </div>
+    </div>
+
+<script>
+    const app =Vue.createApp({
+        data(){
+            return{
+                fruits:["Mango","Apple","grape","strawberry","orange"],
+                fruitsphoto:["a.jpg","b.jpg","c.jpg","d.jpg","e.jpg"],
+
+                fruitsphotocaption:[
+                {name:"Papaya", url:"a.jpg"},
+                {name:"Grape", url:"b.jpg"},
+                {name:"banana", url:"c.jpg"},
+                {name:"guava", url:"d.jpg"},
+                {name:"date", url:"e.jpg"}],
+            }
+        }
+
+    })
+    app.mount("#app")
+</script>
+</body>
+</html>
