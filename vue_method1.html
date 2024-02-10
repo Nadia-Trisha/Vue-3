@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+        {{valueWithId}}
+        <br>
+        <img src="dhaka.jpg" id="map" alt="none" v-on:click="valueNid($event,'This is the map of Dhaka')" name="Image Name">
+    </div>
+
+    <script>
+        const app =Vue.createApp({
+            data(){
+                return{
+                    valueWithId:""
+                }
+            },
+            methods:{
+                valueNid(e,v){
+                    this.valueWithId = "ID:" + e.target.id + ", Name:" + e.target.name + ": ";
+                    this.valueWithId += v
+                }
+            }
+        })
+        app.mount("#app")
+    </script>
+</body>
+</html>
